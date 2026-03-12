@@ -12,4 +12,37 @@ for _ in range(3):
    n.next = head
    head = n # prepend
 
+# Print using while loop
+ptr = head
+while ptr is not None:
+    print(ptr.number)
+    ptr = ptr.next
+
+# Linked list -- Append Nodes
+class Node:
+    def __init__(self, number):
+        self.number = number
+        self.next = None
+
+head = None
+for _ in range(3):
+    number = int(input("Number: "))
+    n = Node(number)
+
+    if head is None:
+        head = n
+    else:
+        ptr = head
+        while ptr.next is not None:
+            ptr = ptr.next
+        ptr.next = n # append to end
+        
+# Print
+ptr = head
+while ptr is not None:
+    print(ptr.number)
+    ptr = ptr.next
+
+
+
 root = Node(3)
