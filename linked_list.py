@@ -43,6 +43,37 @@ while ptr is not None:
     print(ptr.number)
     ptr = ptr.next
 
+# Linked List - Sorted Insert
+class Node:
+    def __init__(self, number):
+        self.number = number
+        self.next = None
+
+head = None
+for _ in range(3):
+    number = int(input("Number: "))
+    n = Node(number)
+
+    if head is None:
+        head = n
+    elif n.number > head.number:
+        n.next = head
+        head = n
+    else:
+        ptr = head
+        while ptr.next is not None:
+            if n.number < ptr.next.number:
+                n.next = ptr.next
+                ptr.next = n
+                break
+            ptr = ptr.next
+        else:
+            ptr.next = n # append at end
+
+# Print
+ptr = head
+while ptr is not None:
+    print(ptr.number)
+    ptr = ptr.next
 
 
-root = Node(3)
