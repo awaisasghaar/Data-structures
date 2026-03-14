@@ -77,6 +77,40 @@ ptr = head
 while ptr is not None:
     print(ptr.number, end=' -> ')
     ptr = ptr.next
+print('None\n')
+
+
+# Linked List - Unload (Free Memeory)
+# Python handles memory automatically via garbage collection
+# But here's the explicit equivalent of thr unload function
+
+class Node:
+    def __init__(self, number):
+        self.number = number
+        self.next = None
+
+def unload(head):
+    ptr = head
+    while ptr is not None:
+        next_node = ptr.next
+        del ptr     # explicitly delete node (like free())
+        ptr = next_node
+
+
+head = None
+for _ in range(3):
+    number = int(input("Number: "))
+    n = Node(number)
+    n.next = head
+    head = n
+
+# print
+ptr = head
+while ptr is not None:
+    print(ptr.number, end=' -> ')
+    ptr = ptr.next
 print('None')
 
 
+unload(head)
+head = None
