@@ -15,8 +15,9 @@ for _ in range(3):
 # Print using while loop
 ptr = head
 while ptr is not None:
-    print(ptr.number)
+    print(ptr.number, end=' -> ')
     ptr = ptr.next
+print('None\n')
 
 # Linked list -- Append Nodes
 class Node:
@@ -40,8 +41,9 @@ for _ in range(3):
 # Print
 ptr = head
 while ptr is not None:
-    print(ptr.number)
+    print(ptr.number, end=' -> ')
     ptr = ptr.next
+print('None\n')
 
 # Linked List - Sorted Insert
 class Node:
@@ -73,7 +75,8 @@ for _ in range(3):
 # Print
 ptr = head
 while ptr is not None:
-    print(ptr.number)
+    print(ptr.number, end=' -> ')
     ptr = ptr.next
+print('None')
 
 
