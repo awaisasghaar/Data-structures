@@ -114,3 +114,35 @@ print('None')
 
 unload(head)
 head = None
+print('\n')
+
+# Binary Search Tree
+class Node:
+    def __init__(self, number):
+        self.number = number
+        self.left = None
+        self.right = None
+
+def search(tree, number):
+    if tree is None:
+        return False
+    elif number < tree.number:
+        return search(tree.left, number)
+    elif number > tree.number:
+        return search(tree.right, number)
+    else:
+        return True
+
+# Example for uaage
+root = Node(4)
+root.left = Node(2)
+root.right = Node(6)
+root.left.left = Node(1)
+root.left.right = Node(3)
+root.right.left = Node(5)
+root.right.right = Node(7)
+
+print(search(root, 3))
+print(search(root, 5))
+print(search(root, 10))
+
