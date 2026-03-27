@@ -23,11 +23,14 @@ class Array:
 
 if __name__ == '__main__':
     find = Array()
-    print(find.insert(10))
-    print(find.insert(20))
-    print(find.insert(30))
-    print(find.insert(15, index=1))
-    find.display()
+    print(find.insert(10)) # append O(n) time complexity
+    print(find.insert(20)) # append O(n) time complexity
+    print(find.insert(30)) # append O(n) time complexity
+    print(find.insert(15, index=1)) # O(n) time complexity
+    find.display() # O(n) time complexity
+
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
 
 
 
