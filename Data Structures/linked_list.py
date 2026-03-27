@@ -142,7 +142,7 @@ root.left.right = Node(3)
 root.right.left = Node(5)
 root.right.right = Node(7)
 
-print(search(root, 3))
-print(search(root, 5))
-print(search(root, 10))
+print(search(root, 3)) # True
+print(search(root, 5)) # True
+print(search(root, 10)) # False
 
