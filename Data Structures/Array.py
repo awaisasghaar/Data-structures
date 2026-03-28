@@ -34,6 +34,7 @@ class Array:
             
         return f"\n Number not found {num} in Array: {self.data} "
     
+    # ----------Binary Search---------
     def binary_search(self):
         num = int(input("Binary Search: "))
 
