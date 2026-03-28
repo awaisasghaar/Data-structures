@@ -67,8 +67,8 @@ if __name__ == "__main__":
    print(find.search())
    print(find.binary_search())
 
-    # Time Complexity: O(n)
-    # Space Complexity: O(1)
+    # Time Complexity: O(n log n)
+    # Space Complexity: O(n)
 
 
 
