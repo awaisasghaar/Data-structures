@@ -4,33 +4,32 @@ class Array:
     def __init__(self):
         self.data = []
         self.size = 0
-    
-    # -------INSERT--------
-    def insert(self, value, index=None):
-        """Insert a value at given index"""
-        if index is None:
-            self.data.append(value)
-        elif index >= 0 and index <= self.size:
-            self.data.insert(index, value)
+        
+    def append(self):
+        for _ in range(3):
+            num = int(input("\nNumber: "))
+            self.data.append(num)
+            self.size += 1
+            print(f"{num} is added in Array: {self.data}")
+        return f"\n Array {self.data} is size of {self.size}"
+        
+    def insert(self, index=0):
+        num = int(input("\nNumber: "))
+        if index >= 0 and index <= self.size:
+            self.data.insert(index, num)
         else:
-            raise IndexError(f"Index {index} out of range")
+            print("Nothing happens")
         self.size += 1
-        return f"Value {value} inserted at index {index}"
+        print(f"{num} inserted at index 3")
+        return f"\n Array {self.data} is size of {self.size}"
+        
 
-    def display(self):
-        print(f"Array {self.data} size {self.size}")
-
-
-if __name__ == '__main__':
-    find = Array()
-    print(find.insert(10)) # append O(n) time complexity
-    print(find.insert(20)) # append O(n) time complexity
-    print(find.insert(30)) # append O(n) time complexity
-    print(find.insert(15, index=1)) # O(n) time complexity
-    find.display() # O(n) time complexity
+find = Array()
+print(find.append())
+print(find.insert(index=3))
 
     # Time Complexity: O(n)
-    # Space Complexity: O(n)
+    # Space Complexity: O(1)
 
 
 
