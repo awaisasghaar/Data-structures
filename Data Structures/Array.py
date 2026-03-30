@@ -47,8 +47,9 @@ class Array:
             # Find middle index
             mid = (low + high) // 2
             if self.data[mid] == num:
-                print(f"\n {num} found at index {mid}")
-                break
+                print(f"\nArray after sorted {self.data}")
+                return f"\n {num} found at index {mid}"
+               
             
             # Go Right
             elif self.data[mid] < num:
@@ -57,22 +58,23 @@ class Array:
             elif self.data[mid] > num:
                 high = mid - 1
             else:
-                print(f"\n{num} not found")
-                
-        return f"\n Array after sorted: {self.data}"
+                print(f"\n{num} not found")           
     
     # --------- Delete by Index ---------
-    def delete_index(self, index=0):
-        if index is None:
-            print("Nothing here to delete here.")
-        if index is not None:
-            if index >= 0 and index < self.size:
-                remove = self.data.pop(index)
-                self.size -= 1
-                print(f"\nIndex {remove} removed")
-            return f"\n Array after deletion of an index: {self.data}"
+    def delete_index(self):
+        index = int(input("\nEnter number to delete from index: "))
+
+        if self.size == 0:
+            print("Nothing here to delete")
+        
+        if index >= 0 and index < self.size:
+            self.data.pop(index)
+            print(f"\n Element removed from index {index} at {self.data}")
+            self.size -= 1
+            return f"\n Array {self.data} after element removed from index {index}"
         else:
-            f"\n Invalid Index"
+            print("\n Index out of range.")
+
 
     # ---------- Delete by Value ----------
     def delete_value(self):
