@@ -1,148 +1,58 @@
-#  Linked List
-# Linked List prepend Nodes
+# Linked List
+
 class Node:
-    def __init__(self, number):
-        self.number = number
+    def __init__(self, data):
+        self.data = data
         self.next = None
 
-head = None
-for _ in range(3):
-   number = int(input("Number: "))
-   n = Node(number)
-   n.next = head
-   head = n # prepend
+if __name__ == "__main__":
 
-# Print using while loop
-ptr = head
-while ptr is not None:
-    print(ptr.number, end=' -> ')
-    ptr = ptr.next
-print('None\n')
+    # Create Nodes
+    node1 = Node(4)
+    node2 = Node(6)
+    node3 = Node(8)
+    node4 = Node(10)
 
-# Linked list -- Append Nodes
+    # Link Nodes
+    node1.next = node2
+    node2.next = node3
+    node3.next = node4
+
+    # Head will point to the first node
+    head = node1
+
+    # Traverse and print the Linked List
+    current = head
+    while current:
+        print(f"{current.data} ->", end=" ")
+        current = current.next
+    print("None")
+
+
+# Singly Linked List
+
 class Node:
-    def __init__(self, number):
-        self.number = number
+    def __init__(self, data):
+        self.data = data
         self.next = None
 
-head = None
-for _ in range(3):
-    number = int(input("Number: "))
-    n = Node(number)
-
+def traverse(head):
     if head is None:
-        head = n
-    else:
-        ptr = head
-        while ptr.next is not None:
-            ptr = ptr.next
-        ptr.next = n # append to end
-        
-# Print
-ptr = head
-while ptr is not None:
-    print(ptr.number, end=' -> ')
-    ptr = ptr.next
-print('None\n')
+        return f"Head node is NULL"
+    while head is not None:
+        print(f"{head.data}", end=' ')
+        head = head.next
 
-# Linked List - Sorted Insert
-class Node:
-    def __init__(self, number):
-        self.number = number
-        self.next = None
-
-head = None
-for _ in range(3):
-    number = int(input("Number: "))
-    n = Node(number)
-
-    if head is None:
-        head = n
-    elif n.number > head.number:
-        n.next = head
-        head = n
-    else:
-        ptr = head
-        while ptr.next is not None:
-            if n.number < ptr.next.number:
-                n.next = ptr.next
-                ptr.next = n
-                break
-            ptr = ptr.next
-        else:
-            ptr.next = n # append at end
-
-# Print
-ptr = head
-while ptr is not None:
-    print(ptr.number, end=' -> ')
-    ptr = ptr.next
-print('None\n')
+    
+if __name__ == "__main__":
+    head = Node(5)
+    head.next = Node(10)
+    head.next.next = Node(15)
+    head.next.next.next = Node(20)
+    traverse(head)
 
 
-# Linked List - Unload (Free Memeory)
-# Python handles memory automatically via garbage collection
-# But here's the explicit equivalent of thr unload function
-
-class Node:
-    def __init__(self, number):
-        self.number = number
-        self.next = None
-
-def unload(head):
-    ptr = head
-    while ptr is not None:
-        next_node = ptr.next
-        del ptr     # explicitly delete node (like free())
-        ptr = next_node
 
 
-head = None
-for _ in range(3):
-    number = int(input("Number: "))
-    n = Node(number)
-    n.next = head
-    head = n
 
-# print
-ptr = head
-while ptr is not None:
-    print(ptr.number, end=' -> ')
-    ptr = ptr.next
-print('None')
-
-
-unload(head)
-head = None
-print('\n')
-
-# Binary Search Tree
-class Node:
-    def __init__(self, number):
-        self.number = number
-        self.left = None
-        self.right = None
-
-def search(tree, number):
-    if tree is None:
-        return False
-    elif number < tree.number:
-        return search(tree.left, number)
-    elif number > tree.number:
-        return search(tree.right, number)
-    else:
-        return True
-
-# Example for uaage
-root = Node(4)
-root.left = Node(2)
-root.right = Node(6)
-root.left.left = Node(1)
-root.left.right = Node(3)
-root.right.left = Node(5)
-root.right.right = Node(7)
-
-print(search(root, 3)) # True
-print(search(root, 5)) # True
-print(search(root, 10)) # False
 
