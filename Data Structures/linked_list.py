@@ -43,13 +43,26 @@ def traverse(head):
         print(f"{head.data}", end=' ')
         head = head.next
 
+def search_num(head, num):
+    current = head
+    while current is not None:
+        if current.data == num:
+            return True
+        current = current.next
+    return False
+    
     
 if __name__ == "__main__":
     head = Node(5)
     head.next = Node(10)
     head.next.next = Node(15)
     head.next.next.next = Node(20)
-    traverse(head)
+    print(traverse(head))
+    num = 20
+    num = 15
+    print(search_num(head, num))
+    
+    
 
 
 
