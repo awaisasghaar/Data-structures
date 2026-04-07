@@ -16,6 +16,7 @@ class LinkedList:
             print(current.data, end=" -> ")
             current = current.next
         return
+    print("None")
 
     # ------ INSERT AT HEAD ------
     def insert_at_head(self, data):
@@ -33,6 +34,18 @@ class LinkedList:
         while current.next:
             current = current.next
         current.next = node
+    
+    def insert_after_value(self, target, data):
+        current = self.head
+        while current:
+            if current.data == target:
+                node = Node(data)
+                node.next = current.next
+                current.next = node
+                return True
+            current = current.next
+        return False
+
 
         
 
@@ -40,6 +53,7 @@ if __name__ == "__main__":
     l = LinkedList()
     l.insert_at_head(43)
     l.insert_at_tail(42)
+    l.insert_after_value(42, 20)
     l.traverse()
 
 
