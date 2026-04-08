@@ -72,6 +72,9 @@ if __name__ == "__main__":
     l.delete(20)
     l.traverse()
 
+# Time complexity: O(n)
+# Space Complexity: O(n)
+
 
     
     
